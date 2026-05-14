@@ -1,4 +1,13 @@
-<main class="flex flex-col w-full h-screen items-center bg-blue-900 dark:bg-gray-900"> 
+<div>
+    <ul>
+        <li><a routerLink="/" class="hover:text-gray-300">Home</a></li>
+        <li><a routerLink="/about" class="hover:text-gray-300">about</a></li>
+        <li><a routerLink="/blog" class="hover:text-gray-300">blog</a></li>
+        <li><a routerLink="/contact" class="hover:text-gray-300">contact</a></li>
+    </ul>
+</div>
+
+<main class="flex flex-col w-full h-screen items-center dark:bg-gray-900 "> 
     <app-menubar-component></app-menubar-component>
     <app-title-component></app-title-component>
     
@@ -11,6 +20,7 @@
             <app-smallcard-component></app-smallcard-component>
         </div>
     </section>
+    <app-video-player></app-video-player>
     <app-footer-component></app-footer-component>
 </main>
 <router-outlet></router-outlet>
