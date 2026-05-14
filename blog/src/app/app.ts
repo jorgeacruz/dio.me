@@ -4,15 +4,17 @@ import { MenubarComponent } from './components/menubar-component/menubar-compone
 import { TitleComponent } from "./components/title-component/title-component";
 import { BigcardComponent } from "./components/bigcard-component/bigcard-component";
 import { SmallcardComponent } from "./components/smallcard-component/smallcard-component";
+import { FooterComponent } from "./components/footer-component/footer-component";
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, 
-    MenubarComponent, 
-    TitleComponent, 
+    RouterOutlet,
+    MenubarComponent,
+    TitleComponent,
     BigcardComponent,
-    SmallcardComponent
-  ],
+    SmallcardComponent,
+    FooterComponent
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

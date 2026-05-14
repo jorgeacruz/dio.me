@@ -1,16 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-*{
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #101828; 
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #040995cc;
-    padding: 10px;
-    text-align: left;
+.dark {
+    background-color: #1c398e;
     color: #fff;
 }
