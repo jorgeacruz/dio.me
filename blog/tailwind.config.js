@@ -14,6 +14,11 @@ module.exports = {
         primary: '#040995cc',
         secondary: '#ffcc',
       },
+      width: {
+        500: '500px',
+        300: '300px',
+        50: '50px',
+      },
     },
   },
 
