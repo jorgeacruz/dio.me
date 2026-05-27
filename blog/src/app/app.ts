@@ -12,13 +12,9 @@ import { VideoPlayer } from './components/video-player/video-player';
   standalone: true,
   imports: [
     RouterOutlet,
-    RouterLink,
     MenubarComponent,
     TitleComponent,
-    BigcardComponent,
-    SmallcardComponent,
     FooterComponent,
-    VideoPlayer
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'
