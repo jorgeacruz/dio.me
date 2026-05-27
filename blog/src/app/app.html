@@ -1,6 +1,8 @@
 
-<app-loading-spinner [isLoading]="isLoadingState"></app-loading-spinner>
-
+<!-- Se estiver carregando, exibe o spinner por cima de tudo -->
+@if (isLoadingState()) {
+  <app-loading-spinner [isLoading]="isLoadingState()" />
+}
 
 <main class="flex flex-col w-full h-screen items-center dark:bg-gray-900 "> 
     <app-menubar-component></app-menubar-component>

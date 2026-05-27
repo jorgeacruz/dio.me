@@ -1,10 +1,10 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-//components
+
+// Components
 import { MenubarComponent } from './components/menubar-component/menubar-component';
 import { TitleComponent } from "./components/title-component/title-component";
 import { FooterComponent } from "./components/footer-component/footer-component";
-
 import { LoadingSpinner } from './components/loading-spinner/loading-spinner';
 
 @Component({
@@ -16,26 +16,28 @@ import { LoadingSpinner } from './components/loading-spinner/loading-spinner';
     TitleComponent,
     FooterComponent,
     LoadingSpinner
-],
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit { // Adicionada a implementação da interface OnInit
 
-  isLoadingState = false;
+  // Correção: Transformado em um Signal para reatividade correta
+  isLoadingState = signal<boolean>(false);
+  protected readonly title = signal('blog');
 
   ngOnInit() {
     this.fetchData();
   }
 
   fetchData() {
-    this.isLoadingState = true;
+    // Altera o valor do signal para true
+    this.isLoadingState.set(true);
     
-    // Simulating an API call or background operation
+    // Simula uma chamada de API de 3 segundos
     setTimeout(() => {
-      this.isLoadingState = false;
+      // Altera o valor do signal para false (esconde o spinner)
+      this.isLoadingState.set(false);
     }, 3000);
   }
-
-  protected readonly title = signal('blog');
 }
