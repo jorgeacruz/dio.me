@@ -8,17 +8,20 @@
         </div>
     </div>
     <div class="bg-yellow-400 w-md lg:w-7xl md:w-4xl sm:w-2xl h-32 lg:h-32 flex flex-col items-center justify-center gap-4 mt-10 rounded">
-        <h3 class="text-lg lg:text-2xl font-bold text-black">
+        <h3 class="text-center text-lg lg:text-xl font-bold text-black p-2 lg:p-6">
             {{questionsSelected.question}}
         </h3>
     </div>
-    <div class="w-md lg:w-7xl md:w-4xl sm:w-2xl flex flex-col md:flex-row items-center justify-center gap-4 mt-10">
+    <div class="w-full lg:w-7xl md:w-4xl sm:w-2xl flex flex-col items-center justify-center gap-4 mt-10">
         
-    <button class="w-full h-44 lg:h-32 lg:w-2xl md:w-lg bg-blue-500 hover:bg-black duration-300 hover:border hover:border-yellow-400 text-white hover:text-yellow-400 px-4 py-2 rounded">butao 1</button>
-        
-        <button class="w-full h-44 lg:h-32 lg:w-2xl md:w-lg bg-blue-500 hover:bg-black duration-200 hover:border hover:border-yellow-400 text-white hover:text-yellow-400 px-4 py-2 rounded">butao 2</button>
+    <button 
+
+    *ngFor="let option of questionsSelected.options; let i = index"
+      (click)="playerChoose(option.alias)"
+
+    class="w-full h-24 lg:h-12 lg:w-7xl md:w-lg bg-blue-500 hover:bg-black duration-300 hover:border hover:border-yellow-400 text-white hover:text-yellow-400 px-4 py-2 rounded">{{option.name}}</button>
     </div>
-    <div *ngIf="finished" class="w-md lg:w-7xl md:w-4xl sm:w-2xl h-32 lg:h-32 flex flex-col items-center justify-center gap-4 mt-10 rounded">
+    <div class="w-md lg:w-7xl md:w-4xl sm:w-2xl h-32 lg:h-32 flex flex-col items-center justify-center gap-4 mt-10 rounded">
         <h1>O seu resultado é: 80%</h1>
         <p>Parabéns! Você acertou 8 de 10 perguntas.</p>
     </div>

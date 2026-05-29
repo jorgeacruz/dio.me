@@ -1,36 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import QuizzService  from '../../data/quizz_questions.json';
+import quizz_questions from '../../data/quizz_questions.json';
+import { NgForOf } from '@angular/common';
 @Component({
   selector: 'app-quizz',
-  imports: [],
+  imports: [NgForOf],
   templateUrl: './quizz.html',
   styleUrl: './quizz.css',
 })
 export class Quizz implements OnInit{
 
-  title: string = "Escolha: Você é um Jedi ou um Sith?";
-  subtitle: string = "Responda as perguntas e descubra de qual lado da força você esta.";
+  title: string = "";
+  subtitle: string = "";
+
   //seleciona as perguntas
   questions: any;
   questionsSelected: any;
+
   // armazena as respostas
   answers: string[] = [];
-  answersSelected: string = '';
+  answersSelected: string = "";
+  
   // armazena o resultado
   questionsIndex: number = 0;
   questionsMaxIndex: number = 0;
+
   // finaaliza o quizz
-  finished: boolean = true;
+  finished: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    if(QuizzService){
+    if(quizz_questions){
       this.finished = false;
-      this.title = QuizzService.title;
-     /* this.questions = QuizzService;
+      this.title = quizz_questions.title;
+      this.subtitle = quizz_questions.subtitle;
+
+      this.questions = quizz_questions.questions;
       this.questionsSelected = this.questions[this.questionsIndex];
-      this.questionsMaxIndex = this.questions.length; */
+
+      this.questionsIndex = 0;
+      this.questionsMaxIndex = this.questions.length;
+
+      console.log(this.questionsIndex)
+      console.log(this.questionsMaxIndex)
     }
+  }
+  playerChoose(value: string){
+    this.answers.push(value);
+    
+    console.log(this.answers);
   }
 }
