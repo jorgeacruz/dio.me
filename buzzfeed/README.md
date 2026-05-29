@@ -1,59 +1,89 @@
-# Buzzfeed
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
+# Jedi ou Sith? — O Quiz que a Força Escolheu por Você
 
-## Development server
+<p style='text-align:center; font-weight:bold'>"Luminous beings are we, not this crude matter."* — Mestre Yoda</p>
 
-To start a local development server, run:
+<img src='./splash/spalsh.png'>
 
-```bash
-ng serve
+
+
+
+## 📖 Descrição
+
+Um quiz interativo temático do universo **Star Wars** onde o usuário descobre se pertence ao **lado da Luz** ou ao **lado Sombrio** da Força. Com 5 perguntas de dilemas morais profundos — inspirados na filosofia da saga — cada resposta revela um pouco mais sobre quem você realmente é. No final, a Força dá seu veredicto: **Jedi** 🔵 ou **Sith** 🔴?
+
+---
+
+## ❓ Perguntas do Quiz
+
+### Pergunta 1 — O Dilema do Inocente
+
+> *Um prisioneiro inocente está prestes a ser executado por engano. Você tem provas para salvá-lo, mas divulgá-las vai expor uma missão secreta crucial. O que você faz?*
+
+| # | Resposta | Lado |
+|---|----------|------|
+| A | Apresento as provas imediatamente. Uma vida inocente vale mais que qualquer missão. | 🔵 Jedi |
+| B | Busco uma terceira via: salvo o prisioneiro sem comprometer a missão. | 🔵 Jedi |
+| C | Deixo a execução acontecer. O bem maior da missão prevalece. | 🔴 Sith |
+| D | Elimino quem vai executar o prisioneiro. Problema resolvido. | 🔴 Sith |
+
+---
+
+### Pergunta 2 — A Traição do Mestre
+
+> *Você descobre que seu mestre/mentor escondeu uma verdade dolorosa de você por anos "para o seu bem". Como você reage?*
+
+| # | Resposta | Lado |
+|---|----------|------|
+| A | Fico triste, mas entendo que ele agiu por amor. Perdoo e sigo em frente. | 🔵 Jedi |
+| B | Confronto com serenidade. Exijo honestidade, mas mantenho o respeito. | 🔵 Jedi |
+| C | Sinto raiva intensa. Isso é uma traição — ninguém mais merece minha confiança. | 🔴 Sith |
+| D | Destruo a reputação dele. Se ele me enganou, merece pagar. | 🔴 Sith |
+
+---
+
+## 🗂️ Estrutura do JSON
+
+O quiz utiliza um arquivo `.json` com o seguinte formato:
+
+```json
+{
+  "title": "Você é um Jedi ou um Sith?",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Texto da pergunta...",
+      "options": [
+        { "id": 1, "name": "Texto da resposta", "alias": "Jedi" },
+        { "id": 2, "name": "Texto da resposta", "alias": "Sith" }
+      ]
+    }
+  ],
+  "results": {
+    "Jedi": "Mensagem de resultado Jedi...",
+    "Sith": "Mensagem de resultado Sith..."
+  }
+}
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+O campo `alias` de cada opção assume os valores `"Jedi"` ou `"Sith"`, que correspondem diretamente às chaves do objeto `results`. A lógica de apuração consiste em contar qual alias acumulou mais respostas ao longo das 5 perguntas.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Como usar no Angular
 
-```bash
-ng generate component component-name
+1. Adicione o arquivo `quiz-jedi-ou-sith.json` em `src/assets/`
+2. Carregue via `HttpClient`:
+
+```typescript
+this.http.get<Quiz>('assets/quiz-jedi-ou-sith.json').subscribe(data => {
+  this.quiz = data;
+});
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Ao final, some as respostas por `alias` e exiba `results[aliasVencedor]`.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+<p style='text-align:center; font-size:30px; font-weight:bold'> May the Force be with you.* 🌌</p>
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

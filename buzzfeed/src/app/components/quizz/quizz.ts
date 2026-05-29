@@ -92,7 +92,7 @@ export class Quizz implements OnInit{
 
     // reload entire page
     window.location.reload();
-    
+
     // reset all variables
     this.finished = false;
     this.questionsIndex = 0;
