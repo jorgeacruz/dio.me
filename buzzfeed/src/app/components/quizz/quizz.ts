@@ -89,10 +89,16 @@ export class Quizz implements OnInit{
 
   // reinicia o quizz
   restart(){
+
+    // reload entire page
+    window.location.reload();
+    
+    // reset all variables
     this.finished = false;
     this.questionsIndex = 0;
     this.answers = [];
     this.questionsSelected = this.questions[this.questionsIndex];
+
   }
 
 }
