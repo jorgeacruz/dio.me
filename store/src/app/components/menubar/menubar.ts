@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './menubar.html',
   styleUrl: './menubar.css',
 })
-export class Menubar {}
+export class MenuBar {}

@@ -2,6 +2,22 @@
 
 @import 'tailwindcss';
 
+
+@theme {
+  /* Define a single color */
+  --color-brand-primary: #3b82f6;
+
+  /* Define a color with multiple shades */
+  --color-brand-50: #eff6ff;
+  --color-brand-500: #3b82f6;
+  --color-brand-900: #1e3a8a;
+
+  /* fonts sizes */
+  --font-size-small: 12px;
+  --font-size-medium: 16px;
+  --font-size-large: 24px;
+}
+
 body {
 
     /* Reset CSS */

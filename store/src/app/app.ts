@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
+import { Loader } from './components/loader/loader';
 import { RouterOutlet } from '@angular/router';
-import { Home } from './pages/home/home';
-import { Menubar } from './components/menubar/menubar';
 import { MenuSony } from "./components/menu-sony/menu-sony";
-import { Loader } from "./components/loader/loader";
+import { MenuBar } from "./components/menubar/menubar";
+//import { NavbarComponent } from "./components/navbar/navbar";
+
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Menubar, Home, MenuSony, Loader],
+  imports: [RouterOutlet, Loader, MenuSony, MenuBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
