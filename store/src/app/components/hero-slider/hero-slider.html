@@ -1,1 +1,59 @@
-<p>hero-slider works!</p>
+<section class="relative h-[520px] w-full overflow-hidden bg-black md:h-[650px]">
+
+  <!-- Image -->
+  <img
+    [src]="slides[currentIndex].image"
+    [alt]="slides[currentIndex].title"
+    class="absolute inset-0 h-full w-full object-cover transition-all duration-700"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex h-full max-w-7xl flex-col justify-center px-6 text-white md:px-12">
+    <span class="mb-3 w-fit rounded-full bg-blue-700 px-4 py-1 text-sm font-semibold">
+      Destaque
+    </span>
+
+    <h1 class="max-w-xl text-4xl font-black leading-tight md:text-6xl">
+      {{ slides[currentIndex].title }}
+    </h1>
+
+    <p class="mt-4 max-w-lg text-lg text-gray-200 md:text-xl">
+      {{ slides[currentIndex].subtitle }}
+    </p>
+
+    <button
+      class="mt-8 w-fit rounded-full bg-white px-7 py-3 font-bold text-black transition hover:bg-blue-700 hover:text-white"
+    >
+      {{ slides[currentIndex].button }}
+    </button>
+  </div>
+
+  <!-- Controls -->
+  <button
+    (click)="prevSlide()"
+    class="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-2xl text-black transition hover:bg-white"
+  >
+    ‹
+  </button>
+
+  <button
+    (click)="nextSlide()"
+    class="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-2xl text-black transition hover:bg-white"
+  >
+    ›
+  </button>
+
+  <!-- Dots -->
+  <div class="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-3">
+    <button
+      *ngFor="let slide of slides; let i = index"
+      (click)="goToSlide(i)"
+      class="h-3 w-3 rounded-full transition"
+      [class.bg-white]="currentIndex === i"
+      [class.bg-white/40]="currentIndex !== i"
+    ></button>
+  </div>
+</section>
