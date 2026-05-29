@@ -15,75 +15,63 @@
 }
 
 .loader {
-        transform: rotateZ(45deg);
-        perspective: 1000px;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        color: #fff;
-      }
-        .loader:before,
-        .loader:after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: inherit;
-          height: inherit;
-          border-radius: 50%;
-          transform: rotateX(70deg);
-          animation: 1s spin linear infinite;
-        }
-        .loader:after {
-          color: #e7c504;
-          transform: rotateY(70deg);
-          animation-delay: .4s;
-        }
+  width: 0;
+  height: 2px;
+  display: inline-block;
+  position: relative;
+  background: #d8c202;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: animFw 6s linear infinite;
+}
+  .loader::after,
+  .loader::before {
+    content: '';
+    width: 10px;
+    height: 1px;
+    background: #FFF;
+    position: absolute;
+    top: 9px;
+    right: -2px;
+    opacity: 0;
+    transform: rotate(-45deg) translateX(0px);
+    box-sizing: border-box;
+    animation: coli1 0.2s linear infinite;
+  }
+  .loader::before {
+    top: -4px;
+    transform: rotate(45deg);
+    animation: coli2 0.2s linear infinite;
+  }
 
-      @keyframes rotate {
-        0% {
-          transform: translate(-50%, -50%) rotateZ(0deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotateZ(360deg);
-        }
-      }
+@keyframes animFw {
+    0% {
+  width: 0;
+}
+    100% {
+  width: 100%;
+}
+  }
 
-      @keyframes rotateccw {
-        0% {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotate(-360deg);
-        }
-      }
+@keyframes coli1 {
+    0% {
+  transform: rotate(-45deg) translateX(0px);
+  opacity: 0.7;
+}
+    100% {
+  transform: rotate(-45deg) translateX(-45px);
+  opacity: 0;
+}
+  }
 
-      @keyframes spin {
-        0%,
-        100% {
-          box-shadow: .2em 0px 0 0px currentcolor;
-        }
-        12% {
-          box-shadow: .2em .2em 0 0 currentcolor;
-        }
-        25% {
-          box-shadow: 0 .2em 0 0px currentcolor;
-        }
-        37% {
-          box-shadow: -.2em .2em 0 0 currentcolor;
-        }
-        50% {
-          box-shadow: -.2em 0 0 0 currentcolor;
-        }
-        62% {
-          box-shadow: -.2em -.2em 0 0 currentcolor;
-        }
-        75% {
-          box-shadow: 0px -.2em 0 0 currentcolor;
-        }
-        87% {
-          box-shadow: .2em -.2em 0 0 currentcolor;
-        }
-      }
-   
+@keyframes coli2 {
+    0% {
+  transform: rotate(45deg) translateX(0px);
+  opacity: 1;
+}
+    100% {
+  transform: rotate(45deg) translateX(-45px);
+  opacity: 0.7;
+}
+  }
+     

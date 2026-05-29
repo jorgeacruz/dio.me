@@ -21,7 +21,7 @@ export class App implements OnInit {
     this.isLoadingState.set(true);
     setTimeout(() =>{
       this.isLoadingState.set(false);
-    }, 1000);
+    }, 6000);
   }
   protected readonly title = signal('Start War - Quizz');
 }
