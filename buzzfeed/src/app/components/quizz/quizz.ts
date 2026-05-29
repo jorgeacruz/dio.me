@@ -47,9 +47,11 @@ export class Quizz implements OnInit{
   }
   playerChoose(value: string){
     this.answers.push(value);
+    this.nextStep();
     console.log(this.answers);
   }
-  async nextStep(){
+  
+  nextStep(){
     this.questionsIndex+=1;
 
     if(this.questionsMaxIndex > this.questionsIndex){
