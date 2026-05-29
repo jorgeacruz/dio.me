@@ -2,10 +2,15 @@
 
     <div class="w-full lg:w-7xl flex items-center justify-center gap-6 py-2">
         <img src="assets/images/star-wars-logo.png" alt="Star War Quizz" class="w-32 lg:w-44">
-        <h3 class="text-3xl lg:text-6xl md:text-4xl font-bold uppercase text-yellow-400">Escolha seu lado da força</h3>
+        <div class="flex flex-col">
+            <h3 class="text-3xl lg:text-5xl md:text-4xl font-bold uppercase text-yellow-400">{{title}}</h3>
+            <p class="hidden md:block text-lg lg:text-xl text-center">{{subtitle}}</p>
+        </div>
     </div>
     <div class="bg-yellow-400 w-md lg:w-7xl md:w-4xl sm:w-2xl h-32 lg:h-32 flex flex-col items-center justify-center gap-4 mt-10 rounded">
-        <h3 class="text-lg lg:text-2xl font-bold text-black">Questão selecionada</h3>
+        <h3 class="text-lg lg:text-2xl font-bold text-black">
+            {{questionsSelected.question}}
+        </h3>
     </div>
     <div class="w-md lg:w-7xl md:w-4xl sm:w-2xl flex flex-col md:flex-row items-center justify-center gap-4 mt-10">
         
@@ -13,7 +18,7 @@
         
         <button class="w-full h-44 lg:h-32 lg:w-2xl md:w-lg bg-blue-500 hover:bg-black duration-200 hover:border hover:border-yellow-400 text-white hover:text-yellow-400 px-4 py-2 rounded">butao 2</button>
     </div>
-    <div class="w-md lg:w-7xl md:w-4xl sm:w-2xl h-32 lg:h-32 flex flex-col items-center justify-center gap-4 mt-10 rounded">
+    <div *ngIf="finished" class="w-md lg:w-7xl md:w-4xl sm:w-2xl h-32 lg:h-32 flex flex-col items-center justify-center gap-4 mt-10 rounded">
         <h1>O seu resultado é: 80%</h1>
         <p>Parabéns! Você acertou 8 de 10 perguntas.</p>
     </div>
