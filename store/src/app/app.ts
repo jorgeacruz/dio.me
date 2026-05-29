@@ -3,7 +3,6 @@ import { Loader } from './components/loader/loader';
 import { RouterOutlet } from '@angular/router';
 import { MenuSony } from "./components/menu-sony/menu-sony";
 import { MenuBar } from "./components/menubar/menubar";
-//import { NavbarComponent } from "./components/navbar/navbar";
 
 
 @Component({
