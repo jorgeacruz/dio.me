@@ -1,14 +1,19 @@
 {
   "title": "Você é um Jedi ou um Sith?",
   "subtitle": "Responda com honestidade - a Força não gosta de mentirosos !",
+  "styles": {
+    "question": "font-weight: bold; color: #222222;",
+    "option": "padding: 10px; border-radius: 5px;",
+    "result": "font-size: 16px; margin-top: 20px;"
+  },
   "questions": [
     {
       "id": 1,
       "question": "Um prisioneiro inocente está prestes a ser executado por engano. Você tem provas para salvá-lo, mas divulgá-las vai expor uma missão secreta crucial. O que você faz?",
       "options": [
         { "id": 1, "name": "Apresento as provas imediatamente. Uma vida inocente vale mais que qualquer missão.", "alias": "Jedi" },
-        { "id": 2, "name": "Busco uma terceira via: salvo o prisioneiro sem comprometer a missão.", "alias": "Jedi" },
         { "id": 3, "name": "Deixo a execução acontecer. O bem maior da missão prevalece.", "alias": "Sith" },
+        { "id": 2, "name": "Busco uma terceira via: salvo o prisioneiro sem comprometer a missão.", "alias": "Jedi" },
         { "id": 4, "name": "Elimino quem vai executar o prisioneiro. Problema resolvido.", "alias": "Sith" }
       ]
     },
@@ -17,18 +22,18 @@
       "question": "Você descobre que seu mestre/mentor escondeu uma verdade dolorosa de você por anos 'para o seu bem'. Como você reage?",
       "options": [
         { "id": 1, "name": "Fico triste, mas entendo que ele agiu por amor. Perdoo e sigo em frente.", "alias": "Jedi" },
-        { "id": 2, "name": "Confronto com serenidade. Exijo honestidade, mas mantenho o respeito.", "alias": "Jedi" },
         { "id": 3, "name": "Sinto raiva intensa. Isso é uma traição — ninguém mais merece minha confiança.", "alias": "Sith" },
-        { "id": 4, "name": "Destruo a reputação dele. Se ele me enganou, merece pagar.", "alias": "Sith" }
+        { "id": 4, "name": "Destruo a reputação dele. Se ele me enganou, merece pagar.", "alias": "Sith" },
+        { "id": 2, "name": "Confronto com serenidade. Exijo honestidade, mas mantenho o respeito.", "alias": "Jedi" }
       ]
     },
     {
       "id": 3,
       "question": "Você possui um poder imenso que nenhum outro ser no universo tem. O que você faz com ele?",
       "options": [
-        { "id": 1, "name": "Coloco meu poder a serviço dos outros, sem esperar reconhecimento.", "alias": "Jedi" },
         { "id": 2, "name": "Treino incansavelmente para controlá-lo — poder sem disciplina é perigoso.", "alias": "Jedi" },
         { "id": 3, "name": "Uso-o para dominar os fracos. Por que ter poder e não exercê-lo?", "alias": "Sith" },
+        { "id": 1, "name": "Coloco meu poder a serviço dos outros, sem esperar reconhecimento.", "alias": "Jedi" },
         { "id": 4, "name": "Elimino potenciais rivais antes que possam ameaçar minha posição.", "alias": "Sith" }
       ]
     },
@@ -36,9 +41,9 @@
       "id": 4,
       "question": "Uma galáxia inteira vive em paz, mas sob um regime que você sabe ser corrupto por dentro. O que você faz?",
       "options": [
+        { "id": 3, "name": "Assumo o controle. Eu serei um tirano mais justo que os atuais líderes.", "alias": "Sith" },
         { "id": 1, "name": "Trabalho dentro do sistema para reformá-lo com transparência e diálogo.", "alias": "Jedi" },
         { "id": 2, "name": "Exponho a corrupção ao povo, deixando que eles decidam seu destino.", "alias": "Jedi" },
-        { "id": 3, "name": "Assumo o controle. Eu serei um tirano mais justo que os atuais líderes.", "alias": "Sith" },
         { "id": 4, "name": "Deixo o sistema entrar em colapso. Do caos nasce a oportunidade real.", "alias": "Sith" }
       ]
     },
@@ -47,9 +52,9 @@
       "question": "No momento mais sombrio da sua vida, com tudo perdido e ninguém ao seu lado, o que guia seus próximos passos?",
       "options": [
         { "id": 1, "name": "A esperança de que a luz nunca desaparece completamente — só se esconde.", "alias": "Jedi" },
-        { "id": 2, "name": "A memória de quem eu amo. Sigo em frente por eles.", "alias": "Jedi" },
         { "id": 3, "name": "A raiva de quem me colocou aqui. Vou me vingar de cada um.", "alias": "Sith" },
-        { "id": 4, "name": "O desprezo pelos que me abandonaram. Não preciso de ninguém.", "alias": "Sith" }
+        { "id": 4, "name": "O desprezo pelos que me abandonaram. Não preciso de ninguém.", "alias": "Sith" },
+        { "id": 2, "name": "A memória de quem eu amo. Sigo em frente por eles.", "alias": "Jedi" }
       ]
     }
   ],
