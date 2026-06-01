@@ -6,8 +6,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <Image source={require('./images/batsinal.jpg')} style={{width:250, height:250}} />
-      <Text style={styles.title}>Gerador de senha</Text>
+      <Text style={styles.title}>BAT PASS GENERATOR</Text>
+      <Image source={require('./images/batsinal.jpg')} style={styles.logo} />
       <TextInput style={styles.Campo} />
       <StatusBar style="auto" />
     </View>
