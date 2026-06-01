@@ -8,7 +8,7 @@ export default function App() {
       
       <Text style={styles.title}>BAT PASS GENERATOR</Text>
       <Image source={require('./images/batsinal.jpg')} style={styles.logo} />
-      <TextInput style={styles.Campo} />
+      <TextInput style={styles.Campo} placeholder='Digite alguma coisa aqui' placeholderTextColor={'#fff'}/>
       <StatusBar style="auto" />
     </View>
   );
