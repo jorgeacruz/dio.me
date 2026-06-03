@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { MenuSony } from "./components/menu-sony/menu-sony";
 import { MenuBar } from "./components/menubar/menubar";
 import { Footer } from "./components/footer/footer";
+import { SociaLinks } from './components/social-links/social-links';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Loader, MenuSony, MenuBar, Footer],
+  imports: [RouterOutlet, Loader, MenuSony, MenuBar, Footer, SociaLinks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
